@@ -1,13 +1,5 @@
 package ph.com.aenon;
 
-/*
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.*;
-import java.util.*;
-*/
-
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -16,11 +8,9 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -55,14 +45,13 @@ public class ClientMain extends Application{
     private static byte[] sendData = new byte[1024];
     private static byte[] receiveData = new byte[1024];
 
-//    private static String serverPassword = "ONLINE123*.";
     private static String serverPassword = "";
     private static String codeOffline = "OFFLINE321.*";
 
     private static boolean flag = false;
 
     private static TextField user;
-    private static TextField pass;
+    private static PasswordField pass;
     private static TextField server;
     private static Text message;
 
@@ -136,7 +125,7 @@ public class ClientMain extends Application{
         gridClient.add(password, 0, 3);
 
         //Create Text Field for Password
-        pass = new TextField();
+        pass = new PasswordField();
         pass.setPromptText("Enter the Password");
         gridClient.add(pass, 1, 3);
 
@@ -188,7 +177,7 @@ public class ClientMain extends Application{
                 serverPassword = pass.getText();
 
                 try {
-                    checkServer();
+                    connectToServer();
 
                     if (flag){
                         message.setText("YEY!");
@@ -269,7 +258,7 @@ public class ClientMain extends Application{
         clientSocket.close();
     }
 
-    public static void checkServer() throws Exception{
+    public static void connectToServer() throws Exception{
         clientSocket = new DatagramSocket();
         IPAddress = InetAddress.getByName(ServerIP);
 

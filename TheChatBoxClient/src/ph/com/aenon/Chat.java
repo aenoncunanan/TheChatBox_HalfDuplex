@@ -98,13 +98,7 @@ public class Chat {
 
         //Set the conversation gridPane's properties
         GridPane gridConvo = new GridPane();
-        //gridConvo.setStyle("-fx-background-color: white;");
         gridConvo.setAlignment(BASELINE_LEFT);
-        //gridConvo.setPrefHeight(255);
-        //gridConvo.setPrefWidth(355);
-        //gridConvo.setHgap(10);
-        //gridConvo.setVgap(10);
-        //gridConvo.setPadding(new Insets(25, 25, 25, 25));
         //gridTitle.setGridLinesVisible(true);
 
         //Create Text Area for conversation

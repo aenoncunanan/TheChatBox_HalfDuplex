@@ -15,7 +15,7 @@ public class ServerMain {
         serverSocket = new DatagramSocket(9876);
 
         String preCode = new String(".,paSs,#");
-        String codeOnline = new String("ONLINE123*.");
+        String codeOnline = new String("ok");
         String codeOffline = new String("OFFLINE321.*");
 
         String clientAddress1 = new String("");

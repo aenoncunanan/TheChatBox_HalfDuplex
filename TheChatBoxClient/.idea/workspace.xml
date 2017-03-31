@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="141d8d2a-7867-4b18-ab39-253929abca34" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ph/com/aenon/Chat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ph/com/aenon/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/Chat.class" afterPath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/Chat.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/ClientMain$1.class" afterPath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/ClientMain$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/ClientMain.class" afterPath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/ClientMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxServer/out/production/TheChatBoxServer/ph/com/aenon/ServerMain.class" afterPath="$PROJECT_DIR$/../TheChatBoxServer/out/production/TheChatBoxServer/ph/com/aenon/ServerMain.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/com/aenon/Chat.java" afterPath="$PROJECT_DIR$/src/ph/com/aenon/Chat.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java" afterPath="$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../TheChatBoxServer/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxServer/src/ph/com/aenon/ServerMain.java" afterPath="$PROJECT_DIR$/../TheChatBoxServer/src/ph/com/aenon/ServerMain.java" />
@@ -32,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClientMain.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClientMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="151" column="8" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="35" />
+            <state relative-caret-position="364">
+              <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chat.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Chat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/Chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="107" column="46" selection-start-line="107" selection-start-column="46" selection-end-line="107" selection-end-column="46" />
+            <state relative-caret-position="79">
+              <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,8 +76,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ph/com/aenon/Util.java" />
-        <option value="$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java" />
         <option value="$PROJECT_DIR$/src/ph/com/aenon/Chat.java" />
+        <option value="$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java" />
       </list>
     </option>
   </component>
@@ -417,7 +416,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -427,7 +426,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28931752" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28486648" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -543,20 +542,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java">
+    <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/Chat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="151" column="8" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="35" />
+        <state relative-caret-position="79">
+          <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/Chat.java">
+    <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="107" column="46" selection-start-line="107" selection-start-column="46" selection-end-line="107" selection-end-column="46" />
+        <state relative-caret-position="364">
+          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

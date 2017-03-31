@@ -1,12 +1,16 @@
 package ph.com.aenon;
 
 import java.net.*;
+import java.util.ArrayList;
 
 public class ServerMain {
 
     private static DatagramSocket serverSocket;
     private static DatagramPacket receivePacket;
     private static DatagramPacket sendPacket;
+
+    private static ArrayList<String> addressList = new ArrayList<String>();
+    private static ArrayList<String> nameList = new ArrayList<String>();
 
     public static void main(String[] args) throws Exception{
         System.out.println("UDP Server Online!");
@@ -17,11 +21,6 @@ public class ServerMain {
         String preCode = new String(".,paSs,#");
         String codeOnline = new String("ok");
         String codeOffline = new String("OFFLINE321.*");
-
-        String clientAddress1 = new String("");
-        String clientName1 = new String("");
-        String clientAddress2 = new String("");
-        String clientName2 = new String("");
 
         while(true){
             byte[] receiveData = new byte[1024];
@@ -40,9 +39,15 @@ public class ServerMain {
                 checkCode = checkCode + sentence.charAt(i);
             }
 
+            String offline = "";
+            int offset = 0;
+            for (offset = 0; offset < codeOffline.length() && sentence.length() >= codeOffline.length(); offset++){
+                offline = offline + sentence.charAt(offset);
+            }
+
             if (checkCode.equals(preCode)){
                 if (sentence.equals(preCode + codeOnline)){
-                    String toSend = "matched!";
+                    String toSend = "prematched!";
                     sendData = toSend.getBytes();
 
                     sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
@@ -52,17 +57,32 @@ public class ServerMain {
                     serverSocket.receive(receivePacket);
 
                     String clientName = new String(receivePacket.getData(), 0, receivePacket.getLength());
+                    boolean flag = false;
+                    int c = 0;
 
-                    if (clientAddress1.equals("")) {
-                        clientAddress1 = IPAddress.toString();
-                        clientName1 = clientName;
+                    for (c = 0; c < nameList.size() && !flag; c++){
+                        if (clientName.equals(nameList.get(c))) {
+                            flag = true;
+                        }
+                    }
+
+                    if (!flag){
+                        addressList.add(IPAddress.toString());
+                        nameList.add(clientName);
                         System.out.println("");
-                        System.out.println(clientName1 + "(" + IPAddress + ")" + " goes online!");
-                    } else if (clientAddress2.equals("")) {
-                        clientAddress2 = IPAddress.toString();
-                        clientName2 = clientName;
-                        System.out.println("");
-                        System.out.println(clientName2 + "(" + IPAddress + ")" + " goes online!");
+                        System.out.println(clientName + "(" + IPAddress + ")" + " goes online!");
+
+                        toSend = "matched!";
+                        sendData = toSend.getBytes();
+
+                        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
+                        serverSocket.send(sendPacket);
+                    }else if (flag){
+                        toSend = "mismatched!";
+                        sendData = toSend.getBytes();
+
+                        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
+                        serverSocket.send(sendPacket);
                     }
                 }else{
                     String toSend = "mismatched!";
@@ -71,17 +91,40 @@ public class ServerMain {
                     sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
                     serverSocket.send(sendPacket);
                 }
-            }else if (sentence.equals(codeOffline)){
-                if (clientAddress1.equals(IPAddress.toString())){
-                    clientAddress1 = "";
-                    System.out.println("");
-                    System.out.println(clientName1 + "(" + IPAddress + ")" + " went offline!");
-                    System.out.println("");
-                }else if (clientAddress2.equals(IPAddress.toString())){
-                    clientAddress2 = "";
-                    System.out.println("");
-                    System.out.println(clientName2 + "(" + IPAddress + ")" + " went offline!");
-                    System.out.println("");
+            }else if (offline.equals(codeOffline)){
+
+                String name = "";
+                for (int i = offset; i < sentence.length(); i++){
+                    name = name + sentence.charAt(i);
+                }
+
+                boolean flag = false;
+                int c;
+
+                for (c = 0; c < addressList.size() && !flag; c++){
+                    if (IPAddress.toString().equals(addressList.get(c))) {
+                        if (name.equals(nameList.get(c))){
+                            flag = true;
+                        }
+                    }
+                }
+
+                if (flag){
+                    System.out.println(addressList);
+                    System.out.println(nameList);
+
+                    if(c == 1){
+                        System.out.println(nameList.get(0) + "(" + addressList.get(0) + ")" + " went offline!");
+                        nameList.remove(0);
+                        addressList.remove(0);
+                    }else if (c < nameList.size() || c == nameList.size() || c > nameList.size()){
+                        System.out.println(nameList.get(c-1) + "(" + addressList.get(c-1) + ")" + " went offline!");
+                        nameList.remove(c-1);
+                        addressList.remove(c-1);
+                    }
+
+                    System.out.println(addressList);
+                    System.out.println(nameList);
                 }
             } else{
                 System.out.println(IPAddress + ": " + sentence);

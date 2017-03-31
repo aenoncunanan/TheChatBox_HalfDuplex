@@ -55,6 +55,8 @@ public class ClientMain extends Application{
     private static TextField server;
     private static Text message;
 
+    private static String receivedSentence;
+
     public void start(Stage primaryStage) throws Exception{
         logInScene = new Scene(createLogInContent());
         stage = primaryStage;
@@ -168,8 +170,7 @@ public class ClientMain extends Application{
 
         btn.setOnAction(event -> {
             message.setFill(Color.FIREBRICK);
-            //name = user.getText();
-            //onChat();
+
             //Check if the text field for the username and password is not empty
             if ((user.getText() != null && !user.getText().isEmpty()) && (pass.getText() != null && !pass.getText().isEmpty()) && (server.getText() != null && !server.getText().isEmpty())) {
                 ServerIP = server.getText();
@@ -180,10 +181,12 @@ public class ClientMain extends Application{
                     connectToServer();
 
                     if (flag){
-                        message.setText("YEY!");
                         onChat();
                     }else{
-                        message.setText("Password mismatched!");
+                        message.setText(
+                                "Invalid ScreenName or"+
+                                "\nPassword mismatched!"
+                        );
                     }
                 } catch (Exception e) {
                     message.setText("Invalid IP Address!");
@@ -250,7 +253,8 @@ public class ClientMain extends Application{
     }
 
     public static void goOffline()throws Exception{
-        sendData = codeOffline.getBytes();
+        String toSend = codeOffline + name;
+        sendData = toSend.getBytes();
 
         sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
         clientSocket.send(sendPacket);
@@ -272,16 +276,24 @@ public class ClientMain extends Application{
         receiveData = new byte[1024];
         receivePacket = new DatagramPacket(receiveData, receiveData.length);
         clientSocket.receive(receivePacket);
-        String receivedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
+        receivedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
 
-        if (receivedSentence.equals("matched!")){
-            flag = true;
-
+        if (receivedSentence.equals("prematched!")){
             sendData = new byte[1024];
             toSend = name;
             sendData = toSend.getBytes();
             sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
             clientSocket.send(sendPacket);
+
+            receiveData = new byte[1024];
+            receivePacket = new DatagramPacket(receiveData, receiveData.length);
+            clientSocket.receive(receivePacket);
+            receivedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
+
+            if (receivedSentence.equals("matched!")){
+                flag = true;
+            }
+
         }else if (receivedSentence.equals("mismatched!")){
             flag = false;
         }

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="TheChatBoxClient:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TheChatBoxClient_jar</output-path>
+    <root id="archive" name="TheChatBoxClient.jar">
+      <element id="module-output" name="TheChatBoxClient" />
+    </root>
+  </artifact>
+</component>

@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da1e8935-6d5e-4d2a-9be5-b7c5a17155bf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/Chat.class" afterPath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/Chat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/ClientMain$1.class" afterPath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/ClientMain$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/ClientMain.class" afterPath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/ClientMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../TheChatBoxClient/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/Chat.java" afterPath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/Chat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/ClientMain.java" afterPath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/ClientMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/com/aenon/ServerMain.java" afterPath="$PROJECT_DIR$/src/ph/com/aenon/ServerMain.java" />
-    </list>
+    <list default="true" id="da1e8935-6d5e-4d2a-9be5-b7c5a17155bf" name="Default" comment="" />
     <ignored path="TheChatBoxServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
